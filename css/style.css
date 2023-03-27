@@ -1,0 +1,41 @@
+.page {
+    max-width: 1400px;
+    background-color:#8eb7cc ;
+    margin: 0 auto;
+}
+
+.header {
+    height: 600px;
+    text-align: center;
+}
+
+
+.nav__links {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+.header__text {
+    margin-top: 40px;
+}
+.header__title {
+    margin: 0;
+}
+.nav__link {
+    text-decoration: none;
+}
+
+.vote__images{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 30px;
+}
+
+.vote__image {
+    height: 300px;
+    width: 300px;
+}
