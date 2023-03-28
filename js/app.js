@@ -33,7 +33,10 @@ let productImages = [
   new Product('watch', 'images/watch.png'),
   new Product('mirror', 'images/mirror.png'),
   new Product('Robotic System', 'images/robotic-system.png'),
-  new Product('Water Filter', 'images/water-filter.png')
+  new Product('Water Filter', 'images/water-filter.png'),
+  new Product('Space Elevator', 'images/space-elevator.png'),
+  new Product('Iron Suit', 'images/iron-suit.png'),
+  new Product('Hover Board', 'images/hover-board.png')
 ];
 
 function getRandomNum() {
