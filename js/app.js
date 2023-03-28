@@ -165,6 +165,42 @@ function displayResults() {
     productNames.push(product.name);
     productClicks.push(product.clicks);
   }
+  // Create a bar chart using Chart.js.
+  new Chart(ctx, {
+    // Set the chart type to bar.
+    type: 'bar',
+    // Set the chart data with the labels, datasets, and other options.
+    data: {
+      labels: productNames,
+      datasets: [
+        {
+          label: 'Votes',
+          data: productClicks,
+          backgroundColor: 'rgba(63, 81, 94, 0.2)',
+          borderColor: 'rgba(126, 158, 177, 1)',
+          borderWidth: 1
+        }
+      ]
+    },
+    // Set the chart options with the scales, legend, and title.
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Product Votes and Times Shown'
+        }
+      }
+    }
+  });
+
 }
 // Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
