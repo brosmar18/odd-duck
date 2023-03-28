@@ -35,6 +35,7 @@
     transition: 0.2s;
 }
 
+
 .nav__link:hover {
     color: skyblue;
 }
@@ -64,6 +65,11 @@
     line-height: 35px;
 }
 
+.vote__description {
+    font-size: 20px;
+    line-height: 25px;
+}
+
 .vote__images {
     width: 1000px;
     margin: 30px auto 0;
@@ -73,6 +79,11 @@
     height: 300px;
     width: 300px;
 }
+
+.results__list {
+    list-style-type: none;
+}
+
 
 .footer {
     height: 100px;
