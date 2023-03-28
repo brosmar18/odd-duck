@@ -145,6 +145,7 @@ function handleImageClick(event) {
 // Function to display the voting results.
 function displayResults() {
   let resultsList = document.createElement('ul');
+  resultsList.className = 'results__list';
   voteSection.appendChild(resultsList);
 
   // Sort the productImages array in descending order of clicks and store it in the sortedProducts variable.
@@ -160,6 +161,7 @@ function displayResults() {
   // Loop through the productImages array and create a new list item element for each product. The text content displays the product name, number of clicks, and number of times it was displayed on the page.
   for (let i = 0; i < productImages.length; i++) {
     let resultItem = document.createElement('li');
+    resultItem.className = 'results__list-item';
     resultItem.textContent = `${sortedProducts[i].name} had ${sortedProducts[i].clicks} votes, and was seen ${sortedProducts[i].shown} times.`;
     resultsList.appendChild(resultItem);
 
@@ -168,7 +170,9 @@ function displayResults() {
       let img = document.createElement('img');
       img.src = sortedProducts[i].src;
       img.alt = sortedProducts[i].name;
-      resultItem.appendChild(img);
+      resultsList.appendChild(img);
+      img.width = 300;
+      img.height = 300;
     }
   }
 }
