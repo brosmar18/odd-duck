@@ -3,7 +3,6 @@ console.log('file connected');
 
 // Global Variables
 let voteSection = document.getElementById('vote');
-
 let productsSection = document.createElement('section');
 productsSection.className = 'vote__prooducts';
 voteSection.appendChild(productsSection);
@@ -17,9 +16,10 @@ function Product(name, src) {
   this.name = name;
   this.src = src;
   this.clicks = 0;
+  this.shown = 0;
 }
 
-const productImages = [
+let productImages = [
   new Product('Bike', '../images/bike.png'),
   new Product('Car', '../images/car.png'),
   new Product('Cyborg', '../images/cyborg.png'),
@@ -63,6 +63,9 @@ function displayProducts() {
     img.src = selectedProducts[i].src;
     img.alt = selectedProducts[i].name;
     productSectionImages.appendChild(img);
+    for (let i = 0; i < selectedProducts.length; i++) {
+      selectedProducts[i].shown++;}
+
   }
 }
 
