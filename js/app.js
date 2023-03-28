@@ -70,3 +70,34 @@ function displayProducts() {
 }
 
 displayProducts();
+
+const totalRounds = 25;
+let currentRound = 0;
+
+
+function handleImageClick(event) {
+
+  for (let i = 0; i < productImages.length; i++) {
+    if (event.target.src.includes(productImages[i].src)) {
+      productImages[i].clicks++;
+      break;
+    }
+  }
+
+
+  productsSection.removeChild(productsSection.lastElementChild);
+
+
+  currentRound++;
+  if (currentRound < totalRounds) {
+    displayProducts();
+  } else {
+    voteSection.removeEventListener('click', handleImageClick);
+
+
+    let viewResultsButton = document.createElement('button');
+    viewResultsButton.textContent = 'View Results';
+    viewResultsButton.addEventListener('click', displayResults);
+    voteSection.appendChild(viewResultsButton);
+  }
+}
