@@ -20,13 +20,13 @@ function Product(name, src) {
 }
 
 let productImages = [
-  new Product('Bike', '../images/bike.png'),
-  new Product('Car', '../images/car.png'),
-  new Product('Cyborg', '../images/cyborg.png'),
-  new Product('Drone', '../images/drone.png'),
-  new Product('Food', '../images/food.png'),
-  new Product('Solar-energy', '../images/solar-energy.png'),
-  new Product('teleport-device', '../images/teleport-device.png'),
+  new Product('Bike', 'images/bike.png'),
+  new Product('Car', 'images/car.png'),
+  new Product('Cyborg', 'images/cyborg.png'),
+  new Product('Drone', 'images/drone.png'),
+  new Product('Food', 'images/food.png'),
+  new Product('Solar-energy', 'images/solar-energy.png'),
+  new Product('teleport-device', 'images/teleport-device.png'),
   new Product('watch', '../images/watch.png'),
 ];
 
