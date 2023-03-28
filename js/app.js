@@ -30,10 +30,10 @@ let productImages = [
   new Product('Cyborg', 'images/cyborg.png'),
   new Product('Drone', 'images/drone.png'),
   new Product('Food', 'images/food.png'),
-  new Product('Solar-energy', 'images/solar-energy.png'),
-  new Product('teleport-device', 'images/teleport-device.png'),
-  new Product('watch', 'images/watch.png'),
-  new Product('mirror', 'images/mirror.png'),
+  new Product('Solar Energy', 'images/solar-energy.png'),
+  new Product('Teleport Device', 'images/teleport-device.png'),
+  new Product('Watch', 'images/watch.png'),
+  new Product('Mirror', 'images/mirror.png'),
   new Product('Robotic System', 'images/robotic-system.png'),
   new Product('Water Filter', 'images/water-filter.png'),
   new Product('Space Elevator', 'images/space-elevator.png'),
@@ -195,7 +195,7 @@ function displayResults() {
         },
         title: {
           display: true,
-          text: 'Product Votes and Times Shown'
+          text: 'Product Votes'
         }
       }
     }
