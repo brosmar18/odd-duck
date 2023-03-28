@@ -10,10 +10,20 @@ voteSectionTitle.className = 'vote__title';
 voteSectionTitle.textContent = 'Vote On Our Products';
 voteSection.appendChild(voteSectionTitle);
 
+
 let productSectionDescription = document.createElement('p');
 productSectionDescription.className = 'vote__description';
 productSectionDescription.textContent = 'Vote for our next innovation! Click on the images below and help us decide which product to create next';
 voteSection.appendChild(productSectionDescription);
+
+// Defined the total number of times the user can vote and the current round the user is on.
+let totalRounds = 10;
+let currentRound = 0;
+
+// Creates a paragraph element to display the remainding number of votes.
+let remainingVotesDisplay = document.createElement('p');
+remainingVotesDisplay.className = 'vote__remaining-votes';
+voteSection.appendChild(remainingVotesDisplay);
 
 // Constructor function called "Product".
 function Product(name, src) {
@@ -41,20 +51,12 @@ let productImages = [
   new Product('Hover Board', 'images/hover-board.png')
 ];
 
+
+
 // Function to generate a random number based on the length of the productImages array.
 function getRandomNum() {
   return Math.floor(Math.random() * productImages.length);
 }
-
-// Defined the total number of times the user can vote and the current round the user is on.
-let totalRounds = 25;
-let currentRound = 0;
-
-// Creates a paragraph element to display the remainding number of votes.
-let remainingVotesDisplay = document.createElement('p');
-remainingVotesDisplay.className = 'vote__remaining-votes';
-voteSection.appendChild(remainingVotesDisplay);
-updateRemainingVotesDisplay();
 
 
 // Function to update the text content of the remainingVotesDisplay
@@ -64,22 +66,27 @@ function updateRemainingVotesDisplay() {
 
 // Function to display three random products from the productImages array.
 function displayProducts() {
-  // array to store the indices of selected products.
-  let indices = [];
+  // array to store the indexes of selected products.
+  let indexes = [];
 
-  // Generate three random numbers to add to the indices array.
-  while (indices.length < 3) {
+  // Generate three random numbers to add to the indexes array.
+  while (indexes.length < 3) {
     let randomNum = getRandomNum();
-    if (indices.indexOf(randomNum) === -1) {
-      indices.push(randomNum);
+
+    /* if randomNum does not exist in the array, index() returns -1, which means indexOf(randomNum) === 1 is true.
+    If randomNum already exists in the indexes array, indexOf(randomNum) === -1 will be false, and the loop will continue to generate new numbers until it finds three unique ones.
+    */
+    if (indexes.indexOf(randomNum) === -1) {
+      indexes.push(randomNum);
     }
   }
   // Empty array to store the selected products.
   let selectedProducts = [];
 
-  // Loop through the indices array and add the corresponding Product instances to the selectedProducts array.
-  for (let i = 0; i < indices.length; i++) {
-    selectedProducts.push(productImages[indices[i]]);
+  // Loop through the indexes array and add the corresponding Product instances to the selectedProducts array.
+
+  for (let i = 0; i < indexes.length; i++) {
+    selectedProducts.push(productImages[indexes[i]]);
   }
 
   // Increment the clicks property of each selected product.
