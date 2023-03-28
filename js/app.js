@@ -3,14 +3,17 @@ console.log('file connected');
 
 // Global Variables
 let voteSection = document.getElementById('vote');
-let productsSection = document.createElement('section');
-productsSection.className = 'vote__prooducts';
-voteSection.appendChild(productsSection);
 
-let productsSectionTitle = document.createElement('h2');
-productsSectionTitle.className = 'vote__title';
-productsSectionTitle.textContent = 'Vote On Our Products';
-productsSection.appendChild(productsSectionTitle);
+
+let voteSectionTitle = document.createElement('h2');
+voteSectionTitle.className = 'vote__title';
+voteSectionTitle.textContent = 'Vote On Our Products';
+voteSection.appendChild(voteSectionTitle);
+
+let productSectionDescription = document.createElement('p');
+productSectionDescription.className = 'vote__description';
+productSectionDescription.textContent = 'Vote for our next innovation! Click on the images below to help us decide which futuristic technology our company should develop next. Your input is invaluable in shaping the future of cutting-edge tech.';
+voteSection.appendChild(productSectionDescription);
 
 function Product(name, src) {
   this.name = name;
@@ -27,12 +30,32 @@ let productImages = [
   new Product('Food', 'images/food.png'),
   new Product('Solar-energy', 'images/solar-energy.png'),
   new Product('teleport-device', 'images/teleport-device.png'),
-  new Product('watch', '../images/watch.png'),
+  new Product('watch', 'images/watch.png'),
+  new Product('mirror', 'images/mirror.png'),
+  new Product('Robotic System', 'images/robotic-system.png'),
+  new Product('Water Filter', 'images/water-filter.png'),
+  new Product('Space Elevator', 'images/space-elevator.png'),
+  new Product('Iron Suit', 'images/iron-suit.png'),
+  new Product('Hover Board', 'images/hover-board.png')
 ];
 
 function getRandomNum() {
   return Math.floor(Math.random() * productImages.length);
 }
+const totalRounds = 25;
+let currentRound = 0;
+
+let remainingVotesDisplay = document.createElement('p');
+remainingVotesDisplay.className = 'vote__remaining-votes';
+voteSection.appendChild(remainingVotesDisplay);
+updateRemainingVotesDisplay();
+
+
+
+function updateRemainingVotesDisplay() {
+  remainingVotesDisplay.textContent = `You have ${totalRounds - currentRound} votes remaining.`;
+}
+
 
 function displayProducts() {
   let indices = [];
@@ -55,7 +78,7 @@ function displayProducts() {
 
   let productSectionImages = document.createElement('div');
   productSectionImages.className = 'vote__images';
-  productsSection.appendChild(productSectionImages);
+  voteSection.appendChild(productSectionImages);
 
   for (let i = 0; i < selectedProducts.length; i++) {
     let img = document.createElement('img');
@@ -71,8 +94,6 @@ function displayProducts() {
 
 displayProducts();
 
-const totalRounds = 25;
-let currentRound = 0;
 
 
 function handleImageClick(event) {
@@ -85,10 +106,11 @@ function handleImageClick(event) {
   }
 
 
-  productsSection.removeChild(productsSection.lastElementChild);
+  voteSection.removeChild(voteSection.lastElementChild);
 
 
   currentRound++;
+  updateRemainingVotesDisplay();
   if (currentRound < totalRounds) {
     displayProducts();
   } else {
