@@ -144,38 +144,27 @@ function handleImageClick(event) {
 
 // Function to display the voting results.
 function displayResults() {
-  let resultsList = document.createElement('ul');
-  resultsList.className = 'results__list';
-  voteSection.appendChild(resultsList);
+  // Get the canvas element from the HTML.
+  let resultsCanvas = document.getElementById('resultsChart');
+  // Get the 2D context of the canvas element.
+  let ctx = resultsCanvas.getContext('2d');
 
-  // Sort the productImages array in descending order of clicks and store it in the sortedProducts variable.
-
-  // slice() creates a new array containing the same elements as productImages.
-
-  // sort() sorts the elements of an array in place, and returns the sorted array. The function subtracts the number of clicks of the second element from the number of clicks of the first element, resulting in a descending order based on the clicks property.
-
+  // Sort the productImages array in descending order of clicks.
   let sortedProducts = productImages.slice().sort(function (a, b) {
     return b.clicks - a.clicks;
   });
 
-  // Loop through the productImages array and create a new list item element for each product. The text content displays the product name, number of clicks, and number of times it was displayed on the page.
-  for (let i = 0; i < productImages.length; i++) {
-    let resultItem = document.createElement('li');
-    resultItem.className = 'results__list-item';
-    resultItem.textContent = `${sortedProducts[i].name} had ${sortedProducts[i].clicks} votes, and was seen ${sortedProducts[i].shown} times.`;
-    resultsList.appendChild(resultItem);
+  // Create empty arrays to store the product names, clicks, and shown counts.
+  let productNames = [];
+  let productClicks = [];
 
 
-    if (i < 3) {
-      let img = document.createElement('img');
-      img.src = sortedProducts[i].src;
-      img.alt = sortedProducts[i].name;
-      resultsList.appendChild(img);
-      img.width = 300;
-      img.height = 300;
-    }
+  // Loop through the sortedProducts array and populate the three arrays with the corresponding values.
+  for (let i = 0; i < sortedProducts.length; i++) {
+    let product = sortedProducts[i];
+    productNames.push(product.name);
+    productClicks.push(product.clicks);
   }
 }
-
-
+// Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
