@@ -14,7 +14,8 @@
 
 
 .nav__links {
-    margin: 0;
+    margin-left: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: flex-end;
     gap: 30px;
@@ -22,15 +23,30 @@
     margin-right: 30px;
 }
 
-.header__text {
-    margin-top: 40px;
+.nav__link {
+    color: white;
+    font-size: 25px;
+    line-height: 30px;
 }
+
+
+.nav__link {
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav__link:hover {
+    color: skyblue;
+}
+
+.header__text {
+    padding-top: 250px;
+}
+
 .header__title {
     color: white;
     margin: 0;
-}
-.nav__link {
-    text-decoration: none;
+    font-size: 60px;
 }
 
 .vote__images{
@@ -39,7 +55,28 @@
     gap: 30px;
 }
 
+.vote {
+    text-align: center;
+}
+
+.vote__title {
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.vote__images {
+    width: 1000px;
+    margin: 30px auto 0;
+}
+
 .vote__image {
     height: 300px;
     width: 300px;
+}
+
+.footer {
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0;
 }
