@@ -101,3 +101,32 @@ function handleImageClick(event) {
     voteSection.appendChild(viewResultsButton);
   }
 }
+
+function displayResults() {
+  let resultsList = document.createElement('ul');
+  voteSection.appendChild(resultsList);
+
+
+  let sortedProducts = productImages.slice().sort(function (a, b) {
+    return b.clicks - a.clicks;
+  });
+
+  for (let i = 0; i < productImages.length; i++) {
+    let resultItem = document.createElement('li');
+    resultItem.textContent = `${sortedProducts[i].name} had ${sortedProducts[i].clicks} votes, and was seen ${sortedProducts[i].shown} times.`;
+    resultsList.appendChild(resultItem);
+
+
+    if (i < 3) {
+      let img = document.createElement('img');
+      img.src = sortedProducts[i].src;
+      img.alt = sortedProducts[i].name;
+      img.width = 300;
+      img.height = 300;
+      resultItem.appendChild(img);
+    }
+  }
+}
+
+
+voteSection.addEventListener('click', handleImageClick);
