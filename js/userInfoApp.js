@@ -12,7 +12,7 @@ const form = document.getElementById('form');
 form.addEventListener('Submit', handleFormSubmit);
 
 function handleFormSubmit (event){
-  event.preventDeafult();
+//   event.preventDeafult();
 
   function formatDate(date) {
     const d = new Date(date);
@@ -43,3 +43,5 @@ function handleFormSubmit (event){
   event.target.reset();
 
 }
+
+handleFormSubmit();
