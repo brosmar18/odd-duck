@@ -1,5 +1,5 @@
 'use strict';
-console.log('voteImagesApp.js Connected');
+console.log('file connected');
 
 // Global Variables
 let voteSection = document.getElementById('vote');
@@ -108,7 +108,8 @@ function displayProducts() {
 
     // Increment the shown property of each selected product.
     for (let i = 0; i < selectedProducts.length; i++) {
-      selectedProducts[i].shown++;}
+      selectedProducts[i].shown++;
+    }
 
   }
 }
@@ -119,7 +120,7 @@ displayProducts();
 
 // Event handler function that is called when the user clicks on a product image.
 function handleImageClick(event) {
-// Loop through the productImages array and find the Product instance that matches the image that was clicked on by checking if the image source URL contains the source URL of the current product image in the loop.
+  // Loop through the productImages array and find the Product instance that matches the image that was clicked on by checking if the image source URL contains the source URL of the current product image in the loop.
   for (let i = 0; i < productImages.length; i++) {
     if (event.target.src.includes(productImages[i].src)) {
       // Increment the clicks prperty of the matched Product instance by 1.
