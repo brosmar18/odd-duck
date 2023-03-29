@@ -52,7 +52,7 @@
 
 .user {
     width: 70%;
-    height: 500px;
+    height: 450px;
     margin: 0 auto;
 }
 
@@ -68,6 +68,68 @@
     line-height: 35px;
     padding-top: 30px;
 }
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form__fieldset {
+    margin: 20px 0;
+    border: none;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+    color: #153b56;
+}
+
+.form__input,
+.form__select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0ef2e9;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #153b56;
+}
+
+.form__input::placeholder {
+    color: #153b56;
+}
+
+.form__input:focus,
+.form__select:focus {
+    outline: none;
+    border-color: #153b56;
+}
+
+.form__select option[disabled]:first-child {
+    display: none;
+}
+
+.form__select option[selected] {
+    background-color: #0ef2e9;
+    color: #fff;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: #0ef2eabd;
+    color: black;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #153b56;
+}
+
 
 .user__description {
     margin-top: 10px;
@@ -83,6 +145,7 @@
 
 .vote {
     text-align: center;
+    padding-top: 80px;
 }
 
 .vote__title {
