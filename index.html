@@ -15,8 +15,9 @@
     <header class="header">
         <nav class="nav">
             <ul class="nav__links">
-                <li><a class="nav__link" href="#">Home</a></li>
+                <li><a class="nav__link" href="index.html">Home</a></li>
                 <li><a class="nav__link" href="#">Products</a></li>
+                <li><a class="nav__link" href="results.html">Results</a>
                 <li><a class="nav__link" href="#">About Us</a></li>
                 <li><a class="nav__link" href="#">Contact Us</a></li>
             </ul>
@@ -26,6 +27,30 @@
         </div>
     </header>
     <main class="main">
+        <section class="user">
+            <div class="user__text">
+            <h2 class="user__title">User</h2>
+            <p class="user__description">Enter Your Info Below</p>
+            </div>
+            <div class="user__form">
+                <form class="form" id="form">
+                    <fieldset class="form__fieldset">
+                        <label class="form__label" for="name">Full Name</label>
+                        <input  class="form__input" type="text" id="name" required>
+                        <label class="form__label" for="date">Date</label>
+                        <input class="form__input" type="date" id="date" required>
+                        <label class="form__label" for="heard-us">How did you hear about us?</label>
+                        <select class="form__select" id="heard-us" name="heard-us" required>
+                            <option value="" disabled selected>Click the Dropdown</option>
+                            <option value="facebook">TikTok</option>
+                            <option value="friends-family">Friends/Family</option>
+                            <option value="dream">You had a dream</option>
+                        </select>
+                    </fieldset>
+                </form>
+
+            </div>
+        </section>
         <section class="vote" id="vote">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -39,7 +64,8 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; Bryan Garduno Gonzalez</p>
     </footer>
-    <script src="js/app.js"></script>
+    <scripit src="js/userInfoApp.js"></scripit>
+    <script src="js/voteImagesApp.js"></script>
     </div>
 </body>
 

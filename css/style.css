@@ -50,6 +50,31 @@
     font-size: 60px;
 }
 
+.user {
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.user__text {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user__title {
+    margin: 0;
+    font-size: 30px;
+    line-height: 35px;
+    padding-top: 30px;
+}
+
+.user__description {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
 .vote__images{
     display: grid;
     grid-template-columns: repeat(3, 300px);
