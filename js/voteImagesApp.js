@@ -1,5 +1,5 @@
 'use strict';
-console.log('file connected');
+console.log('voteImagesApp.js Connected');
 
 // Global Variables
 let voteSection = document.getElementById('vote');
