@@ -92,7 +92,9 @@ function displayProducts() {
   // Increment the clicks property of each selected product.
   for (let i = 0; i < selectedProducts.length; i++) {
     selectedProducts[i].clicks++;
+    selectedProducts[i].shown++;
   }
+
 
   let productSectionImages = document.createElement('div');
   productSectionImages.className = 'vote__images';
@@ -165,6 +167,8 @@ function displayResults() {
   // Create empty arrays to store the product names, clicks, and shown counts.
   let productNames = [];
   let productClicks = [];
+  let productShown = [];
+
 
 
   // Loop through the sortedProducts array and populate the three arrays with the corresponding values.
@@ -172,12 +176,10 @@ function displayResults() {
     let product = sortedProducts[i];
     productNames.push(product.name);
     productClicks.push(product.clicks);
+    productShown.push(product.shown);
   }
-  // Create a bar chart using Chart.js.
   new Chart(ctx, {
-    // Set the chart type to bar.
     type: 'bar',
-    // Set the chart data with the labels, datasets, and other options.
     data: {
       labels: productNames,
       datasets: [{
@@ -186,23 +188,29 @@ function displayResults() {
         backgroundColor: 'rgba(65, 131, 215, 0.8)',
         borderColor: 'rgba(255, 255, 255, 1)',
         borderWidth: 1
+      }, {
+        label: 'Shown',
+        data: productShown,
+        backgroundColor: 'rgba(26, 55, 78, 0.6)',
+        borderColor: 'rgba(179, 206, 224, 1)',
+
+        borderWidth: 1
       }]
     },
-    // Set the chart options with the scales, legend, and title.
     options: {
       scales: {
         y: {
           beginAtZero: true,
           ticks: {
             font: {
-              size: 20 // Change this value to increase or decrease the font size
+              size: 20
             }
           }
         },
         x: {
           ticks: {
             font: {
-              size: 20 // Change this value to increase or decrease the font size
+              size: 20
             }
           }
         }
@@ -212,7 +220,7 @@ function displayResults() {
           position: 'top',
           labels: {
             font: {
-              size: 20 // Change this value to increase or decrease the font size
+              size: 20
             }
           }
         },
@@ -220,12 +228,13 @@ function displayResults() {
           display: true,
           text: 'Product Votes',
           font: {
-            size: 30 // Change this value to increase or decrease the font size
+            size: 30
           }
         }
       }
     }
   });
+
 
 
 

@@ -68,7 +68,7 @@ function displayResult(resultsList, result){
     // Image element with the saved result.
     let resultImage = document.createElement('img');
     resultImage.src = result.imageURL;
-    resultImage.alt = `${result.name} - ${result.date}`
+    resultImage.alt = `${result.name} - ${result.date}`;
     resultImage.className = 'results__display-image';
     resultsDisplay.appendChild(resultImage);
 
