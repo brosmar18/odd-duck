@@ -15,9 +15,18 @@ function displaySavedResults(){
     let savedResults = getSavedResults();
 
     // Loop through each saved result and display it.
-    savedResults.forEach(function(result){
-        displayResult(resultsList, result);
-    });
+
+    // Check to see if there are any saved results.
+    if (savedResults.length === 0){
+        // call the displayNoResultsMessage function.
+        displayNoResultsMessage(resultsList);
+    } else{
+        // Loop through each saved result and display it.
+        savedResults.forEach(function (result) {
+            displayResult(resultsList, result);
+        });
+
+    }
 
 }
 
