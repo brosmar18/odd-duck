@@ -1,0 +1,17 @@
+.header {
+    height: 600px;
+    text-align: center;
+    background-image: url(../images/header-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header__text {
+    padding-top: 200px;
+}
+
+.header__title {
+    color: white;
+    margin: 0;
+    font-size: 80px;
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb;
+}

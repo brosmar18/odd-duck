@@ -1,0 +1,16 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: #0ef2eabd;
+    color: black;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+    transition: all 0.2s ease-in-out;
+}

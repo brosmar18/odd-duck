@@ -1,0 +1,44 @@
+.vote {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.vote__title {
+    font-size: 36px;
+    line-height: 40px;
+    color: #27607c;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.vote__images {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 30px;
+}
+
+
+.vote__description {
+    font-size: 20px;
+    line-height: 25px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.vote__remaining-votes {
+    font-size: 20px;
+    color: #27607c;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vote__images {
+    width: 1000px;
+    margin: 30px auto 0;
+}
+
+.vote__image {
+    height: 300px;
+    width: 300px;
+}
