@@ -2,6 +2,8 @@
 console.log('file connected');
 
 // Global Variables
+
+let linkResults = document.getElementById('link');
 let voteSection = document.getElementById('vote');
 
 
@@ -288,7 +290,7 @@ function saveResult(event){
   let resultsLink = document.createElement('a');
   resultsLink.href = 'results.html';
   resultsLink.textContent = 'Go to Results page';
-  form.appendChild(resultsLink);
+  linkResults.appendChild(resultsLink);
 
 }
 
