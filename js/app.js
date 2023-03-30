@@ -143,6 +143,7 @@ function handleImageClick(event) {
 
 
     let viewResultsButton = document.createElement('button');
+    viewResultsButton.className = 'results__view-button';
     viewResultsButton.textContent = 'View Results';
     viewResultsButton.addEventListener('click', displayResults);
     voteSection.appendChild(viewResultsButton);
@@ -179,34 +180,56 @@ function displayResults() {
     // Set the chart data with the labels, datasets, and other options.
     data: {
       labels: productNames,
-      datasets: [
-        {
-          label: 'Votes',
-          data: productClicks,
-          backgroundColor: 'rgba(63, 81, 94, 0.2)',
-          borderColor: 'rgba(126, 158, 177, 1)',
-          borderWidth: 1
-        }
-      ]
+      datasets: [{
+        label: 'Votes',
+        data: productClicks,
+        backgroundColor: 'rgba(65, 131, 215, 0.8)',
+        borderColor: 'rgba(255, 255, 255, 1)',
+        borderWidth: 1
+      }]
     },
     // Set the chart options with the scales, legend, and title.
     options: {
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            font: {
+              size: 20 // Change this value to increase or decrease the font size
+            }
+          }
+        },
+        x: {
+          ticks: {
+            font: {
+              size: 20 // Change this value to increase or decrease the font size
+            }
+          }
         }
       },
       plugins: {
         legend: {
           position: 'top',
+          labels: {
+            font: {
+              size: 20 // Change this value to increase or decrease the font size
+            }
+          }
         },
         title: {
           display: true,
-          text: 'Product Votes'
+          text: 'Product Votes',
+          font: {
+            size: 30 // Change this value to increase or decrease the font size
+          }
         }
       }
     }
   });
+
+
+
+
 
   // Add an event listener to the form button.
   let saveResultButton = document.getElementById('button');
