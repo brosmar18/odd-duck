@@ -48,9 +48,9 @@
 .header__title {
     color: white;
     margin: 0;
-    font-size: 60px;
+    font-size: 80px;
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb;
 }
-
 
 
 
@@ -122,9 +122,7 @@
     margin-top: 20px;
 }
 
-/* ... other CSS rules ... */
 
-/* Updated footer styles */
 .footer {
     height: 100px;
     text-align: center;

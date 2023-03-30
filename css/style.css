@@ -1,6 +1,6 @@
 .page {
     max-width: 1400px;
-    background-color:#8eb7cc ;
+    background-color: #8eb7cc;
     margin: 0 auto;
 }
 
@@ -24,30 +24,32 @@
 }
 
 .nav__link {
-    color: white;
+    color: #6ae9ff;
     font-size: 25px;
     line-height: 30px;
+    border: 1px solid #1bf1ef;
+    background-color: #27607c;
+    border-radius: 8px;
 }
 
+.nav__link:hover {
+    opacity: 0.7;
+}
 
 .nav__link {
     text-decoration: none;
-    transition: 0.2s;
 }
 
-
-.nav__link:hover {
-    color: skyblue;
-}
 
 .header__text {
-    padding-top: 250px;
+    padding-top: 200px;
 }
 
 .header__title {
     color: white;
     margin: 0;
-    font-size: 60px;
+    font-size: 80px;
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb;
 }
 
 .user {
