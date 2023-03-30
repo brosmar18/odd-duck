@@ -26,3 +26,28 @@ function getSavedResults(){
 }
 
 // Function to display a single saved result.
+function displayResult(resultsList, result){
+    // Div to style and display the result.
+    let resultsDisplay = document.createElement('div');
+    resultsDisplay.className = 'results__display';
+
+    // Title for the saved result with the user's name and date.
+
+    let resultTitle = document.createElement('h3');
+    resultTitle.textContent = `${result.name} - ${result.date}`;
+    resultTitle.className = 'results__display-title';
+    resultsDisplay.appendChild(resultTitle);
+
+    // Image element with the saved result.
+    let resultImage = document.createElement('img');
+    resultImage.src = result.imageURL;
+    resultImage.alt = `${result.name} - ${result.date}`
+    resultImage.className = 'results__display-image';
+    resultsDisplay.appendChild(resultImage);
+
+    // Append the resultsDisplay to the results list.
+    resultsList.appendChild(resultsDisplay);
+}
+
+// Link the init function to the DOMContentLoaded event.
+document.addEventListener('DOMContentLoaded', init);
