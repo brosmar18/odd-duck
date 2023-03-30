@@ -73,5 +73,16 @@ function displayResult(resultsList, result){
     resultsList.appendChild(resultsDisplay);
 }
 
+// Function to clear all saved results using button.
+function clearAllSavedResults(){
+    // Remove saved results from local storage.
+    localStorage.removeItem('savedResults');
+    // clear results section
+    let resultsList = document.getElementById('resultsList');
+    resultsList.innerHTML = '';
+    // Display the no saved results message.
+    displayNoResultsMessage(resultsList);
+}
+
 // Link the init function to the DOMContentLoaded event.
 document.addEventListener('DOMContentLoaded', init);
