@@ -122,6 +122,23 @@
     margin-top: 20px;
 }
 
+.link__link {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #65b8d8;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.link__link:hover {
+    background-color: #4b9cb6;
+}
 
 .footer {
     height: 100px;
