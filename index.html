@@ -12,7 +12,6 @@
 
 <body>
     <div class="page">
-
     <header class="header">
         <nav class="nav">
             <ul class="nav__links">
@@ -28,19 +27,30 @@
         </div>
     </header>
     <main class="main">
-            <section class="vote" id="vote">
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            </section>
-            <section class="results">
-                <canvas id="resultsChart"></canvas>
-            </section>
+        <section class="vote" id="vote">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        </main>
-        <footer class="footer">
-            <p class="footer__copyright">&copy; Bryan O. Garduno Gonzalez</p>
-        </footer>
-    </div>
+        </section>
+        <section class="results">
+            <canvas id="resultsChart"></canvas>
+
+        </section>
+        <section class="save__form" hidden>
+            <form class="form" id="form">
+                <label class="form__label" for="userName">Name</label>
+                <input class="form__input" id="userName" name="userName" required placeholder="Enter your full name">
+                <label class="form__label" for="resultDate">Date</label>
+                <input type="date" class="form__input" id="resultDate" name="resultDate" required>
+                <button class="button" type="submit">Save Result</button>
+            </form>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; Bryan Garduno Gonzalez</p>
+    </footer>
     <script src="js/app.js"></script>
+    </div>
 </body>
 
 </html>
