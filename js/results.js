@@ -7,29 +7,31 @@ function init() {
 }
 
 // Function to display the saved results from local storage or display a message if there are no saved results.
-function displaySavedResults(){
+function displaySavedResults() {
 
-    // Get the element with the id 'resultsList' to display the saved results.
+    // Get the HTML element to display the saved results.
     let resultsList = document.getElementById('resultsList');
 
     // Retrieve saved results from local storage.
     let savedResults = getSavedResults();
 
-    // Loop through each saved result and display it.
-
-    // Check to see if there are any saved results.
-    if (savedResults.length === 0){
-        // call the displayNoResultsMessage function.
+    // If there are no saved results, display a message.
+    if (savedResults.length === 0) {
         displayNoResultsMessage(resultsList);
-    } else{
+    } else {
+
+        // Sort the savedResults array in ascending order based on the user's name using the localeCompare() function.
+        savedResults.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
+
         // Loop through each saved result and display it.
         savedResults.forEach(function (result) {
             displayResult(resultsList, result);
         });
-
     }
-
 }
+
 
 // Function to display a message if there are no saved results to display.
 function displayNoResultsMessage(resultsList){
