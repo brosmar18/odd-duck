@@ -211,3 +211,37 @@ function displayResults() {
 }
 // Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
+
+// Function to save the result.
+function saveResult(event){
+  // Prevent the form from submitting and refreshing the page.
+  event.preventDeafult();
+
+  // Get the user's name from the input field.
+  let userName = document.getElementById('userName').value;
+
+  // Get the date from the input field with id 'resultDate'.
+  let resultDate = document.getElementById('resultDate').value;
+
+  //check if both name and date are provided, otherwise show an alert.
+  if(!userName || !resultDate){
+    alert('Both name and date fields are required to save the result.');
+    return;
+  }
+
+  // Get the URL of the chart image from the canvas element.
+  let chartImageURL = document.getElementById('resultsChart').toDataURL('image/png');
+
+  // Retrieve saved results from local storage or use empty array if there are no saved results.
+  let savedResults = JSON.parse(localStorage.getItem('savedResults')) || [];
+
+  // Push the new result to the savedResults array.
+  savedResults.push({name: userName, date: resultDate, imageURL: chartImageURL});
+
+  // Save the updated savedResults array back to local storage.
+  localStorage.setItem('savedResults', JSON.stringify(savedResults));
+
+  // Show an alert to inform the user that the result was saved successfully.
+  alert('Result saved successfully');
+
+}
