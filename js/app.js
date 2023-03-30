@@ -108,8 +108,7 @@ function displayProducts() {
 
     // Increment the shown property of each selected product.
     for (let i = 0; i < selectedProducts.length; i++) {
-      selectedProducts[i].shown++;
-    }
+      selectedProducts[i].shown++;}
 
   }
 }
@@ -120,7 +119,7 @@ displayProducts();
 
 // Event handler function that is called when the user clicks on a product image.
 function handleImageClick(event) {
-  // Loop through the productImages array and find the Product instance that matches the image that was clicked on by checking if the image source URL contains the source URL of the current product image in the loop.
+// Loop through the productImages array and find the Product instance that matches the image that was clicked on by checking if the image source URL contains the source URL of the current product image in the loop.
   for (let i = 0; i < productImages.length; i++) {
     if (event.target.src.includes(productImages[i].src)) {
       // Increment the clicks prperty of the matched Product instance by 1.
@@ -212,3 +211,37 @@ function displayResults() {
 }
 // Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
+
+// Function to save the result.
+function saveResult(event){
+  // Prevent the form from submitting and refreshing the page.
+  event.preventDeafult();
+
+  // Get the user's name from the input field.
+  let userName = document.getElementById('userName').value;
+
+  // Get the date from the input field with id 'resultDate'.
+  let resultDate = document.getElementById('resultDate').value;
+
+  //check if both name and date are provided, otherwise show an alert.
+  if(!userName || !resultDate){
+    alert('Both name and date fields are required to save the result.');
+    return;
+  }
+
+  // Get the URL of the chart image from the canvas element.
+  let chartImageURL = document.getElementById('resultsChart').toDataURL('image/png');
+
+  // Retrieve saved results from local storage or use empty array if there are no saved results.
+  let savedResults = JSON.parse(localStorage.getItem('savedResults')) || [];
+
+  // Push the new result to the savedResults array.
+  savedResults.push({name: userName, date: resultDate, imageURL: chartImageURL});
+
+  // Save the updated savedResults array back to local storage.
+  localStorage.setItem('savedResults', JSON.stringify(savedResults));
+
+  // Show an alert to inform the user that the result was saved successfully.
+  alert('Result saved successfully');
+
+}
