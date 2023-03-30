@@ -152,13 +152,26 @@
 }
 
 .vote__title {
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 36px;
+    line-height: 40px;
+    color: #27607c;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .vote__description {
     font-size: 20px;
     line-height: 25px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.vote__remaining-votes {
+    font-size: 20px;
+    color: #27607c;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .vote__images {
