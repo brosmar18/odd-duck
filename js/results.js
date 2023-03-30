@@ -2,6 +2,7 @@
 // Function called when the DOM is fully loaded.
 function init() {
   displaySavedResults();
+  document.getElementById('clearResults').addEventListener('click', clearAllSavedResults);
 
 }
 
