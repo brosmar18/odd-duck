@@ -2,9 +2,10 @@
 // Function called when the DOM is fully loaded.
 function init() {
   displaySavedResults();
+
 }
 
-// Function to display the saved results from local storage.
+// Function to display the saved results from local storage or display a message if there are no saved results.
 function displaySavedResults(){
 
     // Get the element with the id 'resultsList' to display the saved results.
@@ -19,8 +20,18 @@ function displaySavedResults(){
     });
 
 }
-// Function to retrieve the saved results from local storage.
 
+// Function to display a message if there are no saved results to display.
+function displayNoResultsMessage(resultsList){
+    // Create a p element for the message.
+    let noResltsMessage = document.createElement('p');
+    noResltsMessage.textContent = 'No Saved Results to Display at This Time';
+    noResltsMessage.className = 'results_no-results-message';
+    resultsList.appendChild(noResltsMessage);
+}
+
+
+// Function to retrieve the saved results from local storage.
 function getSavedResults(){
     return JSON.parse(localStorage.getItem('savedResults')) || [];
 }
