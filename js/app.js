@@ -249,3 +249,10 @@ function saveResult(event){
   alert('Result saved successfully');
 
 }
+
+// Function to remove the 'hidde' attribute and display the form.
+
+function showForm(){
+  let form = document.getElementById('form');
+  form.removeAttribute('hidden');
+}
