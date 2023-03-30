@@ -284,6 +284,12 @@ function saveResult(event){
   // Show an alert to inform the user that the result was saved successfully.
   alert('Result saved successfully');
 
+  // Create a link to the results page.
+  let resultsLink = document.createElement('a');
+  resultsLink.href = 'results.html';
+  resultsLink.textContent = 'Go to Results page';
+  form.appendChild(resultsLink);
+
 }
 
 // Function to remove the 'hidde' attribute and display the form.
