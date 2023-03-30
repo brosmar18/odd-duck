@@ -223,7 +223,7 @@ voteSection.addEventListener('click', handleImageClick);
 // Function to save the result.
 function saveResult(event){
   // Prevent the form from submitting and refreshing the page.
-  event.preventDeafult();
+  event.preventDefault();
 
   // Get the user's name from the input field.
   let userName = document.getElementById('userName').value;
