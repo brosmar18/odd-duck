@@ -212,7 +212,11 @@ function displayResults() {
   let saveResultButton = document.getElementById('button');
   saveResultButton.addEventListener('click', saveResult);
 
+
+showForm();
 }
+
+
 // Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
 
@@ -251,8 +255,7 @@ function saveResult(event){
 }
 
 // Function to remove the 'hidde' attribute and display the form.
-
-function showForm(){
+function showForm() {
   let form = document.getElementById('form');
   form.removeAttribute('hidden');
 }
