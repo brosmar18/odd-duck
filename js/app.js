@@ -208,6 +208,10 @@ function displayResults() {
     }
   });
 
+  // Add an event listener to the form button.
+  let saveResultButton = document.getElementById('button');
+  saveResultButton.addEventListener('click', saveResult);
+
 }
 // Add a click event listener to the voteSection element, which calls the handleImageClick function when a product image is clicked.
 voteSection.addEventListener('click', handleImageClick);
