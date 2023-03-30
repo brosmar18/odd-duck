@@ -32,11 +32,15 @@ function displayResult(resultsList, result){
     resultsDisplay.className = 'results__display';
 
     // Title for the saved result with the user's name and date.
+    // Change date format to mm/dd/yyyy
+    let formattedDate = new Intl.DateTimeFormat('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'}).format(new Date(result.date));
+
 
     let resultTitle = document.createElement('h3');
-    resultTitle.textContent = `${result.name} - ${result.date}`;
+    resultTitle.textContent = `${result.name} - ${formattedDate}`;
     resultTitle.className = 'results__display-title';
     resultsDisplay.appendChild(resultTitle);
+
 
     // Image element with the saved result.
     let resultImage = document.createElement('img');
